@@ -1,4 +1,74 @@
-/**Ball Breakout Game using Java - Mini Project**/
+ /** TIME SPENT= 20 hours 
+ * 
+ * EXTENSIONS (from the suggested ones):
+  * 1. User control over bounces improved. If the left or right 1/4th of the paddle is hit, both vx and vy are reflected.
+  * 2. The player can play as many games as they want to, by clicking at the end of a game.
+  * 3. Appropriate sounds were added - Bounce was added for the paddle bounce, two seperate plate shatter noises were added 
+  * for brick breaking, either one which plays randomly. The SuperMario lose life sound is used when a life is lost. The
+  * SuperMario mushroom collect noise is used when a power up is collected. A fiery sound is used when fireball mode is 
+  * activated.
+  * 4. Instead of a kicker, the ball in my game has a slow progression in speed with gameplay. Everytime the paddle is hit,
+  * the pause in milliseconds per frame goes down by 0.5, until it reaches a pause minimum, or a maximum speed, beyond which
+  * it can only go if the appropriate powerup is activated.
+  * 5. Score is kept in a cool new way. The upper blocks are worth more than the lower ones. When multiple bricks are broken
+  * with one hit, you get n*(original points of the block) where 'n' is the consecutive blocks you've hit upto that point.
+  * This means that players who "Break out" get more points.
+  * 
+  * ADDITIONAL EXTENSIONS (of my own):
+  * 1. There is a dropbar of customizable length at the bottom of the playing window with certain special features.
+  * 2. There is a label which keeps track of the number of bricks left.
+  * 3. There is a label which keeps track of the lives the player has left. Initial = 3.
+  * 4. There is a label to keep the score of the player.
+  * 5. The bricks extend 3DRect instead of Rect for a better look and feel of the game.
+  * 6. A 3D pause button was added, which changes prompt when pressed to "Resume" and pauses the game. When pressed, the 
+  * 3DRect has a distinct pressed look to make it appear like an authentic button.
+  * 7. A 3D mute button was added, which changes prompt when pressed to "Turn mute off" and mutes all the game sounds. 
+  * When pressed, the 3DRect has a distinct pressed look to make it appear like an authentic button.
+  * 8. A 3D Funk button was added, which changes prompt when pressed to "Turn funk off". 
+  * When pressed, the 3DRect has a distinct pressed look to make it appear like an authentic button. This idea, admittedly,
+  * is based off a submission from last year shown on the first day of class. When funk is turned on, the color of the ball
+  * and paddle rapidly and randomly switch between the rowColors vector of Colors, giving a glowing, mesmerizing, funky
+  * feel to the game.
+  * 9. At the start of every new ball, or life, a prompt is displayed, and the life is started after a click instead of 
+  * a pause, making for better gameplay.
+  * 10**. POWER UPS - Every 1 in 2 blocks might contain power ups, which can only be released if a power up is not active 
+  * already. When a block containing a power up is broken, the power up appears in the shape of the ball (for convenience)
+  * and drops down at a pace INDEPENDENT of the speed of the ball, as a glowing ball (similar to our ball in funk mode).
+  * If the paddle manages to 'catch' the power up, it disappears, and one of 6 power ups is activated, each given equal 
+  * probability, for simplicity:
+  * a. PADDLE SIZE INCREASE - Paddle size doubles for 5 paddle hits
+  * b. PADDLE SIZE DECREASE - Paddle size halves for 5 paddle hits
+  * c. BALL SPEED UP - Ball speeds up by a certain amount for 5 paddle hits
+  * d. BALL SLOW DOWN - Ball slows down by a certain amount for 5 paddle hits
+  * e. EXTRA LIFE - The user gets an extra life
+  * f. FIREBALL MODE (my favorite) - The Ball acts like a fireball, and is no more reflected by bricks for 5 turns. It 
+  * burns straight through all the bricks like a fireball. The appropriate fireball noise is made, and the ball appears red.
+  * 11. Improved Ball movement. When the ball hits the side of the brick, it is reflected along the horizontal axis instead 
+  * of the vertical.
+  * 12. When a game is finished, prompt messages are displayed for winning, losing along with the score. 
+  * 
+  * 
+  * IMPROVEMENTS TO ASSIGNMENT:
+  * 1. One of my major complaints about an assignment of this order was the grading scheme. I feel like an innovative student is 
+  * really bogged down by the grading to let his mind loose. I mean, I've implemented so many cool procedures but I still feel 
+  * like I might not get the best grade because maybe I missed a class spec or missed writing the time I spent. The emphasis
+  * on fine tuning somehow domninates that on innovation.
+  * 2. And also, as a student, Im discouraged for doing more than necessary knowing that someone who's implemented it simply
+  * and spent less time on it will be rewarded as much as I am.
+  * 3. I think as a solution to the above, there should be 20 marks allotted to invention. This will encourage the grade-seeker
+  * to innovate and know he'll get results. Maybe extra credit perhaps.
+  * 4. Adding images instead of GObjects would be pretty cool
+  * 5. Again, more stress on doing things our own way is key. Instead of writing out how the implementation should happen, 
+  * I think we should clearly be given the option to try our own way. Suppose I wanted to launch the ball from the paddle
+  * instead of the center, perhaps. 
+  * 6. This might be a personal opinion, but I think assignment should have a higher bearing than 7%.
+  * 
+  * Otherwise, I really liked this assignment. This is by far the coolest assignment we've done and it was incredibly fun to 
+  * code and show off to our other non-CS friends. As high school kids we've always dreamed of coding our own games and this
+  * was incredible and should be continued in the years to come. It was long only because I wanted to work on it. It makes you 
+  * feel like a programmer. It set me up and inspired me to design even more games. Absolutely amazing.
+  */
+
 
 import acm.graphics.*;
 import acm.program.*;
